@@ -34,6 +34,8 @@ AC_DEFUN([_PANDORA_SEARCH_THRIFT],[
 	 dnl We also need -I PREFIX/include/thrift
 	 AC_LIB_APPENDTOVAR([INCTHRIFT], [-I]$LIBTHRIFT_PREFIX[/include/thrift])
 	 AC_LIB_APPENDTOVAR([CPPFLAGS], [-I]$LIBTHRIFT_PREFIX[/include/thrift])
+	 AC_LIB_APPENDTOVAR([LDFLAGS], [-L]$LIBTHRIFT_PREFIX[/lib])
+	 AC_LIB_APPENDTOVAR([LDFLAGS], [-lthrift])
 
   ],[
     ac_cv_libthrift="no"
